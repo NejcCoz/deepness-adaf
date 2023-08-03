@@ -3,26 +3,25 @@ This is an integration test of multiple components.
 """
 
 import sys
+from test.test_utils import (SignalCollector, create_rlayer_from_file, create_vlayer_from_file,
+                             get_dummy_fotomap_area_path, get_dummy_fotomap_small_path,
+                             get_dummy_segmentation_model_path, init_qgis)
 from unittest.mock import MagicMock
 
 import pytest
+from qgis.core import (QgsApplication, QgsCoordinateReferenceSystem, QgsProject, QgsRasterLayer, QgsRectangle,
+                       QgsVectorLayer)
 from qgis.PyQt.QtWidgets import QApplication
-from qgis.core import QgsVectorLayer, QgsProject
-from qgis.core import QgsCoordinateReferenceSystem, QgsRectangle, QgsApplication
-from qgis.core import QgsRasterLayer
 
-from deepness.common.channels_mapping import ChannelsMapping
-from deepness.common.config_entry_key import ConfigEntryKey
-from deepness.common.processing_parameters.map_processing_parameters import ProcessedAreaType, \
-    ModelOutputFormat, MapProcessingParameters
-from deepness.common.processing_parameters.segmentation_parameters import SegmentationParameters
-from deepness.common.processing_parameters.training_data_export_parameters import \
-    TrainingDataExportParameters
-from deepness.deepness_dockwidget import DeepnessDockWidget
-from deepness.processing.models.model_types import ModelType
-from deepness.processing.models.segmentor import Segmentor
-from test.test_utils import init_qgis, create_rlayer_from_file, get_dummy_fotomap_small_path, \
-    get_dummy_fotomap_area_path, get_dummy_segmentation_model_path, create_vlayer_from_file, SignalCollector
+from newdeepness.common.channels_mapping import ChannelsMapping
+from newdeepness.common.config_entry_key import ConfigEntryKey
+from newdeepness.common.processing_parameters.map_processing_parameters import (MapProcessingParameters,
+                                                                                ModelOutputFormat, ProcessedAreaType)
+from newdeepness.common.processing_parameters.segmentation_parameters import SegmentationParameters
+from newdeepness.common.processing_parameters.training_data_export_parameters import TrainingDataExportParameters
+from newdeepness.deepness_dockwidget import DeepnessDockWidget
+from newdeepness.processing.models.model_types import ModelType
+from newdeepness.processing.models.segmentor import Segmentor
 
 RASTER_FILE_PATH = get_dummy_fotomap_small_path()
 VLAYER_MASK_FILE_PATH = get_dummy_fotomap_area_path()

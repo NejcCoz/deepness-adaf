@@ -1,9 +1,10 @@
+from test.test_utils import init_qgis
 from unittest.mock import MagicMock
+
 import numpy as np
 
-from deepness.processing.models.detector import Detection, Detector
-from deepness.processing.processing_utils import BoundingBox
-from test.test_utils import init_qgis
+from newdeepness.processing.models.detector import Detection, Detector
+from newdeepness.processing.processing_utils import BoundingBox
 
 
 def test_remove_small_bboxes_inside_funtion():

@@ -1,22 +1,18 @@
+from test.test_utils import (create_default_input_channels_mapping_for_rgba_bands, create_rlayer_from_file,
+                             create_vlayer_from_file, get_dummy_fotomap_area_path, get_dummy_fotomap_small_path,
+                             get_dummy_regression_model_path, get_dummy_segmentation_model_path, init_qgis)
 from unittest.mock import MagicMock
 
+import numpy as np
 from qgis.core import QgsCoordinateReferenceSystem, QgsRectangle
 
-from deepness.common.processing_parameters.regression_parameters import RegressionParameters
-from deepness.common.processing_parameters.segmentation_parameters import SegmentationParameters
-from deepness.common.processing_parameters.map_processing_parameters import ProcessedAreaType, \
-    ModelOutputFormat
-from deepness.processing.map_processor.map_processor_regression import MapProcessorRegression
-from deepness.processing.map_processor.map_processor_segmentation import MapProcessorSegmentation
-from deepness.processing.models.regressor import Regressor
-from deepness.processing.models.segmentor import Segmentor
-from test.test_utils import init_qgis, create_rlayer_from_file, \
-    create_vlayer_from_file, get_dummy_fotomap_area_path, get_dummy_fotomap_small_path, \
-    get_dummy_segmentation_model_path, \
-    create_default_input_channels_mapping_for_rgba_bands, get_dummy_regression_model_path
-
-import numpy as np
-
+from newdeepness.common.processing_parameters.map_processing_parameters import ModelOutputFormat, ProcessedAreaType
+from newdeepness.common.processing_parameters.regression_parameters import RegressionParameters
+from newdeepness.common.processing_parameters.segmentation_parameters import SegmentationParameters
+from newdeepness.processing.map_processor.map_processor_regression import MapProcessorRegression
+from newdeepness.processing.map_processor.map_processor_segmentation import MapProcessorSegmentation
+from newdeepness.processing.models.regressor import Regressor
+from newdeepness.processing.models.segmentor import Segmentor
 
 RASTER_FILE_PATH = get_dummy_fotomap_small_path()
 

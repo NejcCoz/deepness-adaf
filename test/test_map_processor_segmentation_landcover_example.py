@@ -1,16 +1,12 @@
+import os
+from pathlib import Path
+from test.test_utils import create_default_input_channels_mapping_for_rgb_bands, create_rlayer_from_file, init_qgis
 from unittest.mock import MagicMock
 
-from deepness.common.processing_parameters.segmentation_parameters import SegmentationParameters
-from deepness.common.processing_parameters.map_processing_parameters import ProcessedAreaType, \
-    ModelOutputFormat
-from deepness.processing.map_processor.map_processor_segmentation import MapProcessorSegmentation
-from deepness.processing.models.segmentor import Segmentor
-from test.test_utils import init_qgis, create_rlayer_from_file, \
-    create_default_input_channels_mapping_for_rgb_bands
-
-import os
-
-from pathlib import Path
+from newdeepness.common.processing_parameters.map_processing_parameters import ModelOutputFormat, ProcessedAreaType
+from newdeepness.common.processing_parameters.segmentation_parameters import SegmentationParameters
+from newdeepness.processing.map_processor.map_processor_segmentation import MapProcessorSegmentation
+from newdeepness.processing.models.segmentor import Segmentor
 
 HOME_DIR = Path(__file__).resolve().parents[1]
 EXAMPLE_DATA_DIR = os.path.join(HOME_DIR, 'examples', 'deeplabv3_segmentation_landcover')

@@ -7,10 +7,10 @@ import matplotlib.pyplot as plt
 import numpy as np
 from qgis.core import QgsCoordinateReferenceSystem, QgsRectangle
 
-from deepness.common.processing_parameters.map_processing_parameters import ModelOutputFormat, ProcessedAreaType
-from deepness.common.processing_parameters.segmentation_parameters import SegmentationParameters
-from deepness.processing.map_processor.map_processor_segmentation import MapProcessorSegmentation
-from deepness.processing.models.segmentor import Segmentor
+from newdeepness.common.processing_parameters.map_processing_parameters import ModelOutputFormat, ProcessedAreaType
+from newdeepness.common.processing_parameters.segmentation_parameters import SegmentationParameters
+from newdeepness.processing.map_processor.map_processor_segmentation import MapProcessorSegmentation
+from newdeepness.processing.models.segmentor import Segmentor
 
 RASTER_FILE_PATH = get_dummy_fotomap_small_path()
 

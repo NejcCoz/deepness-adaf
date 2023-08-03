@@ -1,6 +1,6 @@
-from deepness.processing.models.model_base import ModelBase
 from test.test_utils import get_dummy_segmentation_model_path
 
+from newdeepness.processing.models.model_base import ModelBase
 
 MODEL_FILE_PATH = get_dummy_segmentation_model_path()
 

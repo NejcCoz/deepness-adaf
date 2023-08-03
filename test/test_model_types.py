@@ -1,4 +1,4 @@
-from deepness.processing.models.model_types import ModelDefinition, ModelType
+from newdeepness.processing.models.model_types import ModelDefinition, ModelType
 
 
 def test_model_types():
